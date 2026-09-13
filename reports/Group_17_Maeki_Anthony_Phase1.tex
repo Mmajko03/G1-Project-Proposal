@@ -1,4 +1,4 @@
-\documentclass[10pt]{article}
+\documentclass[12pt]{article}
 
 \usepackage[margin=1in]{geometry}
 \usepackage{fancyhdr}
@@ -7,6 +7,7 @@
 \usepackage{pdfpages}
 \usepackage[hidelinks]{hyperref}
 \usepackage{titlesec}
+\usepackage{setspace}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -22,6 +23,7 @@
 \titleformat{\subsubsection}
   {\normalfont\small\bfseries}{}{0pt}{}
 
+\setstretch{1.5}
 \begin{document}
 
 {\centering \LARGE
@@ -47,6 +49,32 @@ Authors: Maeki Kashana \& Anthony Alarcon\\
 "Tracking the Changes in Housing Prices Over a Decade Across 50 States using Housing Sales Data to Find the Most Affordable State in this Economy."
 
 \section{Section 2: Research Question}
+
+\section{Section 3: Dataset Information}
+\begin{enumerate}
+	\item Dataset source (URL)\\
+		\url{https://www.redfin.com/news/data-center/downloads/}
+	\item How the data was collected (if known)\\
+		According to the Redfin website, this data offers a detailed snapshot of U.S. residential real estate activity, which includes the full cycle of a home sale; from initial listing through closing. This data is updated on a weekly and monthly basis. \\
+		They mention that the dataset covers rolling four-week windows. They stated that aggregating over 4 weeks provides more stable values, particularly for smaller markets. They measure year-over-year changes in the dataset of sales prices and listings. Year over year comparisons look back 52 weeks to "preserve alignment".
+
+		Lastly, they mention that all metrics cover residential properties, which includes single family homes, condo/co-op, town-house, and multi-family houses. They also note that their data is defined consistently with the US Office of Management and Budget metropolitan divisions where they exist, and metropolitan statistical areas elsewhere.
+	\item License or access type (public, API, Kaggle, etc.)\\
+		This data is publicly available for download.
+	\item Number of rows\\
+		There are over 6000 rows, which is more than sufficient to perform detailed data analysis using pandas.
+	\item Number of columns\\
+		There are a total of 20 columns. A lot of these columns include the year-to-year changes of other columns. For example, Median Price has a YoY Median price. This is true for many of the columns.
+	\item Data types (numeric, categorical, text, date)\\
+		Since there are so many columns, it is to be expected that there are a lot of data types. Without checking the type of the data using pandas, the data appears to be a mix of numerical values, date values, and string objects (categorical values like state and state names).
+	\item Time range (if applicable)\\
+		The time range for this dataset was something that was specified in the website. Our group chose the time frame from Jan. 2016 to Aug. 2026, which is a gap of over 10 years.
+	\item Known limitations of the dataset\\
+		The most obvious limitation of this dataset is that it looks at the entire state for calculating the median price of homes. Because of this, the value that is shown in the median price column of the dataset misrepresents the very expensive homes in certain regions of the state, particularly urban cities with a large population. For example, one of the rows I briefly looked at showed that the median house pricing for California is around 700K. However, this median price does not represent affluent areas of California, such as the City of Los Angeles or San Francisco. In fact, the median pricing of houses in these areas is around one million, which is much larger than the median pricing of California shown in the dataset. Because of the aforementioned information, one looking to settle in and buy housing in urban areas of states should not solely rely on this data. Because it is likely that the data is misrepresenting prices in urban areas.
+\end{enumerate}
+\section{Section 4: Planned EDA Questions}
+
+\section{Section 5: Anticipated Challenges}
 \end{document}
 
 
